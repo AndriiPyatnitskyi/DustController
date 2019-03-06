@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.model.GasController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.Map;
@@ -47,7 +48,7 @@ public class DemoApplicationTests {
 			+ "      \"id\":3,\n"
 			+ "      \"description\":\"anton miroshnichenko\",\n"
 			+ "      \"ip\":\"192.168.88.192\",\n"
-			+ "      \"packetssent\":1452\n"
+			+ "      \"packetsSent\":1452\n"
 			+ "   },\n"
 			+ "   \"deviceLocation\":{  \n"
 			+ "      \"descriptiveLocation\":\"my home - kyiv, volodymyra salskogo str., 43\",\n"
@@ -55,7 +56,7 @@ public class DemoApplicationTests {
 			+ "      \"longtitudeSet\":\"30.417506\",\n"
 			+ "      \"altitudeSet\":\"6\"\n"
 			+ "   },\n"
-			+ "   \"mesageInfo\":{  \n"
+			+ "   \"messageInfo\":{  \n"
 			+ "      \"messageId\":1616,\n"
 			+ "      \"messageDateTime\":\"tue mar 6 9:26:46 2019\",\n"
 			+ "      \"requestHash\":\"e2fe0cd229c09988aeabb8bce654d05c355462df\"\n"
@@ -67,11 +68,7 @@ public class DemoApplicationTests {
 	@Test
 	public void contextLoads() throws IOException {
 		System.out.println("payload:");
-		System.out.println(objectMapper.readValue(payload, Map.class));
-
-		System.out.println("_______________________________________________");
-		System.out.println("wrongPayload:");
-		System.out.println(objectMapper.readValue(wrongPayload, Map.class));
+		System.out.println(objectMapper.readValue(payload, GasController.class));
 	}
 
 }
