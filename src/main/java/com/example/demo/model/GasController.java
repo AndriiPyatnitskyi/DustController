@@ -1,26 +1,29 @@
 package com.example.demo.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
+@ToString
 public class GasController extends BaseEntity {
 
-  @OneToOne
+  @Embedded
   private Data data;
-  @OneToOne
+  @Embedded
   private DeviceInfo deviceInfo;
-  @OneToOne
+  @Embedded
   private DeviceLocation deviceLocation;
-  @OneToOne
+  @Embedded
   private MessageInfo messageInfo;
 
   @Override

@@ -1,33 +1,22 @@
 package com.example.demo.model;
 
-import java.time.Instant;
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-public class MessageInfo extends BaseEntity {
+@Embeddable
+@ToString
+public class MessageInfo {
 
   private Integer messageId;
   private String messageDateTime;
   private String requestHash;
 
-  @Override
-  public String toString() {
-    return "MessageInfo{" +
-        "messageId=" + messageId +
-        ", messageDateTime='" + messageDateTime + '\'' +
-        ", requestHash='" + requestHash + '\'' +
-        ", id='" + id + '\'' +
-        ", version=" + version +
-        ", createdDate=" + createdDate +
-        ", updatedDate=" + updatedDate +
-        '}';
-  }
 }

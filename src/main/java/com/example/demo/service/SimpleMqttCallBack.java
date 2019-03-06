@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.model.GasController;
 import com.example.demo.util.ConnectionManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
@@ -33,7 +32,9 @@ public class SimpleMqttCallBack implements MqttCallback {
   @Override
   public void messageArrived(String s, MqttMessage mqttMessage) throws IOException {
     byte[] payload = mqttMessage.getPayload();
-    System.out.println("Message received:\n\t" + mapper.readValue(payload, GasController.class));
+//    System.out.println("Message received:\n\t" + mapper.readValue(payload, GasController.class));
+    System.out.println("Message received:\n\t" + new String(payload));
+
   }
 
   @Override

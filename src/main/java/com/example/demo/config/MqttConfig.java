@@ -19,9 +19,7 @@ public class MqttConfig {
     MqttConnectOptions options = new MqttConnectOptions();
     options.setUserName(USER); //part of the password_file inside mqtt broker
     options.setPassword(PASSWORD.toCharArray()); //also part of password_file. Username and password might not be needed.
-    options.setConnectionTimeout(60);
-    options.setKeepAliveInterval(60); //how often to send PINGREQ messages
-    options.setMqttVersion(MqttConnectOptions.MQTT_VERSION_3_1_1);
+    options.setAutomaticReconnect(true);
     return options;
   }
 
