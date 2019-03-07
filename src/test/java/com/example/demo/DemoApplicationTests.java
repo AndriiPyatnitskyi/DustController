@@ -4,6 +4,7 @@ import com.example.demo.model.GasController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.Map;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +67,7 @@ public class DemoApplicationTests {
 	private static String wrongPayload = "{\"lifeTime\":48256515,\"state\":0,\"pm1\":8.66666,\"pm25\":10.55555,\"pm10\":12,\"fpm1\":8.66666,\"fpm25\":10.55555,\"fpm10\":12,\"pnum03\":1683.666,\"pnum05\":462.8888,\"pnum1\":56.22222,\"pnum25\":3,\"pnum5\":1.777777,\"pnum10\":0.111111,\"temperature\":7.369999,\"humidity\":55.04286,\"pressure\":460.0541,\"ozoneHigh\":93.0246,\"ozoneLow\":93.0246,\"co\":400,\"no\":48.75145,\"no2\":30.18935,\"h2s\":2,\"so2\":2,\"c6h6\":60},\"deviceInfo\":{\"id\":3,\"description\":\"anton miroshnichenko\",\"ip\":\"192.168.88.192\",\"packetssent\":1452},\"deviceLocation\":{\"descriptiveLocation\":\"my home - kyiv, volodymyra salskogo str., 43\",\"latitudeSet\":\"50.479820\",\"longtitudeSet\":\"30.417506\",\"altitudeSet\":\"6\"}},\"messageId\":1616,\"messageDateTime\":\"tue mar 6 9:26:46 2019\",\"requestHash\":\"e2fe0cd229c09988aeabb8bce654d05c355462df\"}";
 
 	@Test
+	@Ignore
 	public void contextLoads() throws IOException {
 		System.out.println(payload);
 //		System.out.println("payload:");
