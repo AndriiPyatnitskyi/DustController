@@ -67,8 +67,9 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() throws IOException {
-		System.out.println("payload:");
-		System.out.println(objectMapper.readValue(payload, GasController.class));
+		System.out.println(payload);
+//		System.out.println("payload:");
+//		System.out.println(objectMapper.readValue(payload, GasController.class));
 	}
 
 }

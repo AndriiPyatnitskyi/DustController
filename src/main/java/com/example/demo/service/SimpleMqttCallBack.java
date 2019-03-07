@@ -36,11 +36,12 @@ public class SimpleMqttCallBack implements MqttCallback {
 
   @Override
   public void messageArrived(String s, MqttMessage mqttMessage) throws IOException {
-    GasController gasController = mapper.readValue(mqttMessage.getPayload(), GasController.class);
+    byte[] payload = mqttMessage.getPayload();
+    System.out.println("Message received:\n\t" + new String(payload));
 
+    GasController gasController = mapper.readValue(payload, GasController.class);
     GasController save = gasControllerRepository.save(gasController);
-
-    System.out.println("Message received:\n\t" + save);
+    System.out.println("Saved:\n\t" + save);
 //    System.out.println("Message received:\n\t" + new String(payload));
 
   }

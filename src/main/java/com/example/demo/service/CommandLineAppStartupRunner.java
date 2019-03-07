@@ -21,11 +21,11 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
 
   @Override
   public void run(String...args) throws Exception {
-    connectionManager.connect();
+//    connectionManager.connect();
 
-//    new Thread(() -> {
-//      run();
-//    }).start();
+    new Thread(() -> {
+      run();
+    }).start();
 
   }
 

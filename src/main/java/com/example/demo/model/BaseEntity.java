@@ -1,32 +1,42 @@
 package com.example.demo.model;
 
-import java.time.Instant;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @MappedSuperclass
 public class BaseEntity {
 
   @Id
   @GeneratedValue(generator = "system-uuid")
   @GenericGenerator(name = "system-uuid", strategy = "uuid")
-  @Column(name = "id", updatable = false, nullable = false, length = 32)
+  @Column(name = "id", updatable = false, nullable = false, length=32)
   protected String id;
 
-  @Version
-  protected Long version;
+  private Date created;
+  private Date updated;
 
-  @CreatedDate
-  @Column(updatable = false)
-  protected Instant createdDate;
+  @PrePersist
+  protected void onCreate() {
+    created = new Date();
+  }
 
-  @LastModifiedDate
-  protected Instant updatedDate;
+  @PreUpdate
+  protected void onUpdate() {
+    updated = new Date();
+  }
+
+
 
 }
