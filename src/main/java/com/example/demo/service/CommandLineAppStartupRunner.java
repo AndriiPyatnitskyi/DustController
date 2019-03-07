@@ -23,18 +23,14 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
   public void run(String...args) throws Exception {
 //    connectionManager.connect();
 
-    new Thread(() -> {
-      run();
-    }).start();
-
+    new Thread(this::mockBroker).start();
   }
 
-  private void run() {
+  private void mockBroker() {
     try {
       GasController gasController = objectMapper.readValue(Payload.payload, GasController.class);
       GasController save = gasControllerRepository.save(gasController);
       System.out.println(save);
-
     } catch (IOException e) {
       e.printStackTrace();
     }
