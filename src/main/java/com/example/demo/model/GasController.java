@@ -26,17 +26,4 @@ public class GasController extends BaseEntity {
   @Embedded
   private MessageInfo messageInfo;
 
-  @Override
-  public String toString() {
-    return "GasController{" +
-        "data=" + data +
-        ", deviceInfo=" + deviceInfo +
-        ", deviceLocation=" + deviceLocation +
-        ", messageInfo=" + messageInfo +
-        ", id='" + id + '\'' +
-        ", version=" + version +
-        ", createdDate=" + createdDate +
-        ", updatedDate=" + updatedDate +
-        '}';
-  }
 }
