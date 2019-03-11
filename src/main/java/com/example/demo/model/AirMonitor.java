@@ -14,10 +14,10 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class GasController extends BaseEntity {
+public class AirMonitor extends BaseEntity {
 
   @Embedded
-  private Data data;
+  private Measurements measurements;
   @Embedded
   private DeviceInfo deviceInfo;
   @Embedded

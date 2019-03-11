@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.model.GasController;
-import com.example.demo.repository.GasControllerRepository;
+import com.example.demo.model.AirMonitor;
+import com.example.demo.repository.AirMonitorRepository;
 import com.example.demo.util.ConnectionManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class SimpleMqttCallBack implements MqttCallback {
   private ConnectionManager connectionManager;
 
   @Autowired
-  private GasControllerRepository gasControllerRepository;
+  private AirMonitorRepository airMonitorRepository;
 
   @Override
   public void connectionLost(Throwable throwable) {
@@ -39,8 +39,8 @@ public class SimpleMqttCallBack implements MqttCallback {
     byte[] payload = mqttMessage.getPayload();
     System.out.println("Message received:\n\t" + new String(payload));
 
-    GasController gasController = mapper.readValue(payload, GasController.class);
-    GasController save = gasControllerRepository.save(gasController);
+    AirMonitor airMonitor = mapper.readValue(payload, AirMonitor.class);
+    AirMonitor save = airMonitorRepository.save(airMonitor);
     System.out.println("Saved:\n\t" + save);
 //    System.out.println("Message received:\n\t" + new String(payload));
 

@@ -15,6 +15,7 @@ import lombok.ToString;
 @ToString
 public class DeviceInfo {
 
+  private Integer deviceId;
   private String description;
   private String ip;
   private String packetsSent;

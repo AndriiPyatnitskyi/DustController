@@ -13,7 +13,7 @@ import lombok.ToString;
 @Getter
 @Embeddable
 @ToString
-public class Data {
+public class Measurements {
 
   private Long lifeTime;
   private boolean state;
@@ -32,13 +32,21 @@ public class Data {
   private Long temperature;
   private Long humidity;
   private Long pressure;
-  private Long ozoneHigh;
-  private Long ozoneLow;
-  private Integer co;
-  private Integer no;
-  private Integer no2;
-  private Integer h2s;
-  private Integer so2;
-  private Integer c6h6;
+  private Long ozoneHigh_ppm;
+  private Long ozoneLow_ppb;
+  private Long co_ppm;
+  private Long no_ppm;
+  private Long no2_ppm;
+  private Long so2_ppm;
+  private Long h2s_ppm;
+  private Long c6h6_ppm;
+  private Long ozoneHigh_mg;
+  private Long ozoneLow_mg;
+  private Long co_mg;
+  private Long no_mg;
+  private Long no2_mg;
+  private Long so2_mg;
+  private Long h2s_mg;
+  private Long c6h6_mg;
 
 }
